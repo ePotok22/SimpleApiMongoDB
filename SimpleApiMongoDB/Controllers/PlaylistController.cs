@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using SimpleApiMongoDB.Entities;
 using SimpleApiMongoDB.Services;
+using SimpleApiMongoDB.Services.Interfaces;
 
 namespace SimpleApiMongoDB.Controllers
 {
@@ -8,10 +9,10 @@ namespace SimpleApiMongoDB.Controllers
     [Route("api/[controller]")]
     public class PlaylistController : ControllerBase
     {
-        private readonly MongoDBService _mongoDBService;
+        private readonly IMongoDBService _mongoDBService;
         private readonly ILogger<PlaylistController> _logger;
 
-        public PlaylistController(ILogger<PlaylistController> logger, MongoDBService mongoDBService)
+        public PlaylistController(ILogger<PlaylistController> logger, IMongoDBService mongoDBService)
         {
             _mongoDBService = mongoDBService;
             _logger = logger;

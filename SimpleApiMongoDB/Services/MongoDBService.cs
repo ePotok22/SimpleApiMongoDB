@@ -3,10 +3,11 @@ using MongoDB.Bson;
 using MongoDB.Driver;
 using SimpleApiMongoDB.Models;
 using SimpleApiMongoDB.Entities;
+using SimpleApiMongoDB.Services.Interfaces;
 
 namespace SimpleApiMongoDB.Services
 {
-    public class MongoDBService
+    public class MongoDBService: IMongoDBService
     {
         private readonly IMongoCollection<PlaylistDto> _playlistCollection;
 

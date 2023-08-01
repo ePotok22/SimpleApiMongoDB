@@ -1,5 +1,6 @@
 using SimpleApiMongoDB.Models;
 using SimpleApiMongoDB.Services;
+using SimpleApiMongoDB.Services.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,7 +11,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.Configure<MongoDBSettings>(builder.Configuration.GetSection("MongoDB"));
-builder.Services.AddSingleton<MongoDBService>();
+builder.Services.AddSingleton<IMongoDBService, MongoDBService>();
 
 var app = builder.Build();
 
