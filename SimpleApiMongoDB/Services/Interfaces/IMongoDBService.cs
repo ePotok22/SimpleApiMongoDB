@@ -1,8 +1,4 @@
-﻿using Microsoft.Extensions.Options;
-using MongoDB.Bson;
-using MongoDB.Driver;
-using SimpleApiMongoDB.Models;
-using SimpleApiMongoDB.Entities;
+﻿using SimpleApiMongoDB.Entities;
 
 namespace SimpleApiMongoDB.Services.Interfaces
 {
